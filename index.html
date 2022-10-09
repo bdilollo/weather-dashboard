@@ -7,28 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
+    </script>
     <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
+    <header class="jumbotron jumbotron-fluid mb-3">
         <div class="container">
           <h1 class="display-4">Weather Dashboard</h1>
         </div>
-    </div>
-    <div class= "container">
-        <div class="row">
-            <div class="col-3">
+    </header>
+    <main class= "container mx-0">
+        <div class="row ">
+            <section class="col-4 ">
                 <h3>Search for a City:</h3>
-                <input placeholder="San Diego">
+                <input  id="search-input" class="w-100" placeholder="e.g. San Diego">
+                <button class="btn btn-primary btn-block my-2" id="search-btn">Search</button>
                 <hr/>
-                <div id="past-searches"></div>
-            </div>
-            <div class="col-9">
-                <div id="today-weather"></div>
-                <div id="five-day-forecast"></div>
-            </div>
+                <div id="search-history"></div>
+            </section>
+            <section class="col-8">
+                <div class="row">
+                    <div class="col-12" id="today-weather"></div>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="five-day-forecast"></div>                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
     
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
