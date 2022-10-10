@@ -2,6 +2,10 @@
     border: solid 1px;
 } */
 
+#main-content {
+   width: 100%;
+}
+
 #today-weather h3 {
     display: inline;
 }
@@ -13,4 +17,20 @@ ul {
 
 li {
     padding-bottom: 1.5rem;
+}
+
+.card {
+    display: inline-flex;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding: 3px;
+    background-color: rgb(51, 69, 97);
+    color: white;
+    height: 300px;
+    width: 150px;
+}
+
+.card img {
+    height: 60px;
+    width: 60px;
 }
