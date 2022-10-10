@@ -58,7 +58,7 @@ function renderTodayWeather(data) {
     todayWeatherEl.empty();
     var todayDate = moment().format('(M/DD/YYYY)');
     // icons all contained at API's address, but unique code is given in data array--this just pulls that code out and inserts it into the necessary URL to generate the icon for that day
-    var iconCode = 'http://openweathermap.org/img/w/'+data.weather[0].icon+'.png';
+    var iconCode = 'https://openweathermap.org/img/w/'+data.weather[0].icon+'.png';
     // img tag with iconCode as the src attribute
     var weatherIcon = $('<img>').attr('src', iconCode);
     var cityName = $('<h3>').text(data.name+' '+todayDate);
@@ -99,7 +99,7 @@ function renderForecast(data) {
         // using Momentjs to dynamically generate date based on dt_txt value in array from API
         var date = moment(data.list[i].dt_txt).format('M/DD/YYYY');
         forecastCard.append(date);
-        var iconCode = 'http://openweathermap.org/img/w/'+data.list[i].weather[0].icon+'.png';
+        var iconCode = 'https://openweathermap.org/img/w/'+data.list[i].weather[0].icon+'.png';
         var icon = $('<img>').attr('src',iconCode);
         forecastCard.append(icon);
         // adding <ul> tag to append <li> tags to for the three required pieces of data
