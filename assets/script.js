@@ -3,6 +3,7 @@ var searchBtnEl = $('#search-btn');
 var searchHistoryEl = $('#search-history');
 var todayWeatherEl = $('#today-weather');
 var fiveDayForecastEl = $('#five-day-forecast');
+var clearHistoryBtn = $('#clear-history')
 var storedHistory;
 
 
@@ -59,7 +60,6 @@ function renderTodayWeather(data) {
 
 
 function fetchForecast(data) {
-    // console.log(data);
     var requestURL = 'https://api.openweathermap.org/data/2.5/forecast?lat='+data.coord.lat+'&lon='+data.coord.lon+'&units=imperial&appid=c6a780b0ebe365a1307713c838e67424';
     console.log(requestURL);
     $.ajax({
@@ -122,4 +122,8 @@ generateSearchBtns();
 searchBtnEl.on('click', fetchData);
 searchHistoryEl.on('click', '.recent-search', function() {
     fetchData(event);
+});
+clearHistoryBtn.on('click', function() {
+    localStorage.clear();
+    searchHistoryEl.empty();
 });
