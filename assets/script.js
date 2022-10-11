@@ -24,7 +24,7 @@ function generateSearchBtns() {
 function renderSearchHistory(data) {
     if(data !== null){
         var recentSearchBtn = $('<button>');
-        recentSearchBtn.addClass('btn btn-secondary btn-block recent-search');
+        recentSearchBtn.addClass('btn btn-secondary btn-block mx-2 recent-search');
         recentSearchBtn.attr('data-name', data)
         recentSearchBtn.text(data);
         searchHistoryEl.prepend(recentSearchBtn);
@@ -123,7 +123,7 @@ function renderForecast(data) {
     }        
     // for values that were not already present in local storage, generate new search history button and attach it to the top of the list
         var recentSearchBtn = $('<button>');
-        recentSearchBtn.addClass('btn btn-secondary btn-block recent-search');
+        recentSearchBtn.addClass('btn btn-secondary btn-block mx-2 recent-search');
         recentSearchBtn.attr('data-name', data.city.name)
         recentSearchBtn.text(data.city.name);
         searchHistoryEl.prepend(recentSearchBtn);
